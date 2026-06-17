@@ -18,7 +18,6 @@ Future enhancements will include QR code generation, ticket downloads, event cus
 ## Features
 
 * Personalized ticket generation
-* Avatar image upload and preview
 * Form validation for all fields
 * Email format verification
 * Image size and format validation
@@ -31,7 +30,7 @@ Future enhancements will include QR code generation, ticket downloads, event cus
 
 * HTML5
 * CSS3
-* JavaScript (ES6)
+* JavaScript
 * Jest
 
 ## Getting Started
