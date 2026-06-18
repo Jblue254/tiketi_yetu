@@ -4,86 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tiketi Yetu</title>
-    <script src="https://jsdelivr.net"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <div>
-      <header class="">
-        <img src="" alt="Tiketi yetu" />
+  <body class="bg-slate-950 text-white flex items-center justify-center p-4 min-h-screen">
+    <div class="w-full max-w-2xl mx-auto space-y-10">
+      <header class="flex justify-center">
+        <div class="flex items-center gap-2">
+          <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="" />
+          </svg>
+          <span class="text-xl font-black tracking-wider uppercase bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">Tiketi Yetu</span>
+        </div>
       </header>
-      <section class="">
-        <h1 class="">KARIBU TIKETI YETU</h1>
-        <p>Create your event ticket by filling in your details below.</p>
+      
+      <section class="text-center">
+        <h1 class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent">KARIBU TIKETI YETU</h1>
+        <p id="form-instruction" class="text-xl sm:text-2xl font-medium tracking-tight text-slate-400 pt-3">Please select a ticket option below to begin.</p>
       </section>
 
-      <form id="form_filler" class="">
-        <div>
-          <label for="photo upload">Upload your photo</label>
+      <div class="bg-gradient-to-r from-orange-500 to-amber-400 p-[1px] rounded-3xl shadow-2xl">
+        <form id="form_filler" class="bg-slate-950 rounded-[23px] p-6 space-y-6 sm:p-10">
+          
+          <input type="hidden" name="ticket_type" id="selected-ticket-type" value="" required />
+          <input type="hidden" name="ticket_price" id="selected-ticket-price" value="" />
+
           <div>
-            <input type="file" id="file_uploads" class="hidden" />
-            <label for="file-uploads" class="">
-              <p>Drag or drop to upload a file</p>
-            </label>
-          </div>
-          <p class="">JPG or PNG</p>
-        </div>
-        <div>
-          <label class="block mb-2"> Full Names </label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Jane Doe"
-            class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
-          />
-        </div>
-        <div>
-          <label class="block mb-2"> Email address </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="janemwogli@gmail.com"
-            class="w-full px-4 py-3 rounded-xl border"
-          />
-        </div>
-        <div>
-          <label class="block mb-2"> Username </label>
-          <input
-            type="text"
-            name="JBLUE"
-            placeholder="Jina la Mtumiaji"
-            class="w-full px-4 py-3 rounded-xl bg-slate-900"
-          />
-        </div>
-        <button class="">Create my ticket</button>
-      </form>
-      <footer class="mt-16 flex justify-center">
-        <div
-          class="w-full max-w-xl bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700 rounded-3xl p-6"
-        >
-          <div class="flex justify-between items-start">
-            <div class="flex items-center gap-4">
-              <img src="" alt="logo" class="w-12" />
-              <div>
-                <h3 class="font-bold text-xl">Tiketi Yetu</h3>
-                <p class="text-slate-400 text-sm">Nairobi, Kenya</p>
-              </div>
-            </div>
-            <span class="text-slate-500"> #001 </span>
-          </div>
-          <div class="flex items-center gap-4 mt-8">
-            <img
-              src=""
-              alt="avatar"
-              class="w-20 h-20 rounded-2xl object-cover"
+            <label class="block mb-2 text-sm font-medium text-slate-300"> Full Names </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Jane Doe"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-orange-500"
             />
-            <div>
-              <h3 class="font-bold text-xl">Jonathan Doe</h3>
-              <p class="text-slate-400">@yourusername</p>
-              <p class="text-slate-500 text-sm">user@example.com</p>
-            </div>
           </div>
-        </div>
+          <div>
+            <label class="block mb-2 text-sm font-medium text-slate-300"> Email address </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="janemwogli@gmail.com"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-orange-500"
+            />
+          </div>
+          <div>
+            <label class="block mb-2 text-sm font-medium text-slate-300"> Username </label>
+            <input
+              type="text"
+              name="JBLUE"
+              placeholder="JBLUE"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-orange-500"
+            />
+          </div>
+          <button type="submit" class="w-full py-4 bg-gradient-to-r from-orange-500 to-amber-400 font-semibold rounded-xl text-center text-white cursor-pointer hover:opacity-90 active:scale-[0.99] transition-all">Proceed to Checkout</button>
+        </form>
+      </div>
+
+      <footer class="ticket flex flex-col items-center gap-4">
+        <div class="text-xs uppercase tracking-widest text-slate-500 font-semibold">Available Ticket Options</div>
+        
+        <div id="ticket-api-list" class="w-full space-y-4 flex flex-col items-center">
+          </div>
       </footer>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
