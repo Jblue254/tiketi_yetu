@@ -1,0 +1,7 @@
+[
+  { "id": "regular_pass", "name": "Regular Pass", "price": "1000 KES", "location": "Kitenge Fest ,Two Rivers Mall , Nairobi" },
+  { "id": "regular-pass", "name": "VIP Experience", "price": "1000 KES", "location": "Kitenge Fest ,Two Rivers Mall , Nairobi" },
+  { "id": "vip_experience", "name": "VIP Experience", "price": "3500 KES", "location": "Colour Festival, Uhuru Park , Nairobi" },
+  { "id": "vip_gold", "name": "VIP Golden Circle", "price": "2000 KES", "location": "TTNT 6, Sarit Centre , Nairobi" },
+  { "id": "Die_Hard ", "name": "Die Hard", "price": "7000 KES", "location": "TTNT 6, Sarit Centre , Nairobi" }
+]

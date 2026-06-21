@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiketi Yetu</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  </head>
+  
+  <body class="bg-slate-950 text-white flex items-center justify-center p-4 min-h-screen">
+    
+    <div class="w-full max-w-2xl mx-auto space-y-10">
+      <header class="flex justify-center">
+        <div class="flex items-center gap-2">
+         <i class="fa-solid fa-ticket text-xl text-orange-500"></i>
+          <span class="text-xl font-black tracking-wider uppercase bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">Tiketi Yetu</span>
+        </div>
+      </header>
+      
+      <section class="text-center">
+        <h1 class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent">KARIBU TIKETI YETU</h1>
+        <p id="form-instruction" class="text-xl sm:text-2xl font-medium tracking-tight text-slate-400 pt-3">Please select a ticket option below to begin.</p>
+      </section>
+
+      <div class="bg-gradient-to-r from-orange-500 to-amber-400 p-[1px] rounded-3xl shadow-2xl">
+        <form id="form_filler" class="bg-slate-950 rounded-[23px] p-6 space-y-6 sm:p-10">
+          
+          <input type="hidden" name="ticket_type" id="selected-ticket-type" value="" required />
+          <input type="hidden" name="ticket_price" id="selected-ticket-price" value="" />
+
+          <div>
+            <label class="block mb-2 text-sm font-medium text-slate-300"> Full Names </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Jane Doe"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-orange-500"
+            />
+          </div>
+          <div>
+            <label class="block mb-2 text-sm font-medium text-slate-300"> Email address </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="janemwogli@gmail.com"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-orange-500"
+            />
+          </div>
+          <div>
+            <label class="block mb-2 text-sm font-medium text-slate-300"> Username </label>
+            <input
+              type="text"
+              name="JBLUE"
+              placeholder="JBLUE"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-orange-500"
+            />
+          </div>
+          <button type="submit" class="w-full py-4 bg-gradient-to-r from-orange-500 to-amber-400 font-semibold rounded-xl text-center text-white cursor-pointer hover:opacity-90 active:scale-[0.99] transition-all">Proceed to Checkout</button>
+        </form>
+      </div>
+      <div class="w-full max-w-xl mx-auto px-4 mb-2">
+  <div class="relative flex items-center">
+    <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-500 text-sm"></i>
+    <input 
+      type="text" 
+      id="catalog-search" 
+      placeholder="Search for available tickets or artists..." 
+      class="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-slate-900 border border-slate-800 text-white text-sm placeholder-slate-600 focus:outline-none focus:border-orange-500 transition-colors"
+    />
+  </div>
+</div>
+<a href="index.html"class="block text-center text-xs text-slate-400 hover:text-red-600 transition-colors py-2 font-medium  p-4">
+               Back to Home Page
+      <footer class="ticket flex flex-col items-center gap-4">
+        <div class="text-xs uppercase tracking-widest text-slate-500 font-semibold pt-3">Available Ticket Options</div>
+        
+        <div id="ticket-api-list" class="w-full space-y-4 flex flex-col items-center">
+          </div>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Read parameters from the active URL string
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventName = urlParams.get('event');
+    const ticketTier = urlParams.get('tier');
+    const ticketPrice = urlParams.get('price');
+
+    // If data came from the home page, automatically populate your checkout summary UI elements!
+    if (eventName && ticketTier && ticketPrice) {
+      
+      // Example 1: If you have an input field with id="eventInput" on your checkout page
+      const checkoutEventField = document.getElementById("eventInput");
+      if (checkoutEventField) checkoutEventField.value = `${eventName} (${ticketTier})`;
+
+      // Example 2: If you have a plain text display container for your total price summary
+      const checkoutPriceDisplay = document.getElementById("totalPriceDisplay");
+      if (checkoutPriceDisplay) checkoutPriceDisplay.textContent = ticketPrice;
+      
+      console.log(`Checkout initialized for: ${eventName} - ${ticketTier} costing ${ticketPrice}`);
+    }
+  });
+</script>
+  </body>
+</html>
