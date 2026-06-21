@@ -10,14 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let fetchedTickets = []; // Local cache storage for filtering inputs
 
     // Image assets mapped perfectly to match your event names
-    const imageAssets = {
-        "Kitenge Fest":
-            "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=500&q=80",
-        "Colour Festival":
-            "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=500&q=80",
-        "TTNT 6":
-            "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80",
-    };
+  const imageAssets = {
+    "Kitenge Fest": 
+        "./events 04.jpg",
+    "Colour Festival": 
+        "./events 06.jpeg",
+    "TTNT 6": 
+        "./events 03.jpeg",
+};
 
     const dateMap = {
         "Kitenge Fest": "1st Aug",
@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "TTNT 6": "10th Oct",
     };
 
-    // UI Grid Rendering Engine
    // UI Grid Rendering Engine
   function renderEvents(eventsList) {
     if (!gridContainer) return; 

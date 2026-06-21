@@ -15,9 +15,7 @@ async function loadTicketsFromAPI() {
     
     ticketTiersAPI = await response.json();
     
-    // ====================================================================
-    // DYNAMIC INCOMING LINK ROUTER & AUTO-SCROLL
-    // ====================================================================
+ 
     const urlParams = new URLSearchParams(window.location.search);
     const targetId = urlParams.get('id');
 
@@ -40,7 +38,7 @@ async function loadTicketsFromAPI() {
         }, 150);
       }
     }
-    // ====================================================================
+    
 
     renderTickets(); 
   } catch (error) {
