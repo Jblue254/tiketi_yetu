@@ -78,8 +78,23 @@ function calculateGrandTotal() {
 }
 
 document.querySelector('#btn-pay')?.addEventListener('click', () => {
+  if (!userData || Object.keys(cartData).length === 0) return;
+  let grandTotal = 0;
+  Object.values(cartData).forEach(item => {
+    const priceInt = parseInt(String(item.price).replace(/[^0-9]/g, ''), 10) || 0;
+    grandTotal += (priceInt * item.quantity);
+});
+
+//Build the markdown template string
+const receiptMarkdown = generateReceiptMarkdown(userData, cartData, grandTotal);
+
+console.log("Your Receipt.js Template String:\n", receiptMarkdown);
+
+  // 4. Alert user & clean up
   alert(`Processing your payment for your selected tickets! A transaction confirmation was deployed directly to ${userData.email}.`);
+  
   localStorage.clear(); 
+  window.location.href = 'index.html'; 
 });
 
 // Run rendering workflows on initialization loop

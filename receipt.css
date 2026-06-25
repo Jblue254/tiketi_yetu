@@ -1,0 +1,10 @@
+@media print {
+    body {
+        background-color: #ffffff ;
+        color: #000000 ;
+    }
+    .bg-slate-950 {
+        background-color: #ffffff ;
+        color: #000000 ;
+    }
+}
