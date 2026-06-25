@@ -2,36 +2,50 @@
 
 ## About the Project
 
-Tiketi Yetu is a web-based event ticket generator application that allows users to create personalized digital tickets for events. Users can upload their avatar, enter their details, and instantly receive a customized event ticket.
+Tiketi Yetu is a web-based event ticket generator application that allows users to create personalized digital tickets for events. User enter their details, and instantly receive a  event ticket.
 
-The application provides:
+## Live Demo
 
-* Personalized ticket generation
-* Avatar image upload and preview
-* Form validation
-* Dynamic ticket creation
-* Responsive user experience
-* Accessible form controls and feedback messages
+**Live Site:** https://jblue254.github.io/tiketi-yetu/
 
-Future enhancements will include QR code generation, ticket downloads, event customization, and email ticket delivery.
+## Screenshots
+
+## Home Page
+
+<img width="953" height="416" alt="Screenshot 1 home page" src="https://github.com/user-attachments/assets/a45107a5-3fe7-4e61-86f4-c487b08793bb" />
+
+## Ticket Page
+
+<img width="933" height="416" alt="Screenshot 2 ticket page" src="https://github.com/user-attachments/assets/c67af17c-5792-4e27-8bf0-65cb1e6ec0e0" />
+
+## Checkout Page
+
+<img width="935" height="415" alt="Screenshot 3 checkout" src="https://github.com/user-attachments/assets/d4b5a2f1-abcb-4a00-901e-b23adf73b393" />
+
+---
 
 ## Features
 
 * Personalized ticket generation
-* Form validation for all fields
+* Multiple ticket type selection
+* Real-time form validation
 * Email format verification
-* Image size and format validation
-* Responsive and modern user interface
-* Dynamic content generation using JavaScript
-* Accessibility-friendly form controls
-* Mobile and desktop optimized layouts
+* Dynamic ticket generation using JavaScript
+* Responsive design 
+* Ticket printing support
+* Download tickets as PDF
+* Instant ticket preview
+
+---
 
 ## Built With
 
 * HTML5
 * CSS3
 * JavaScript
-* Jest
+* Tailwind css
+
+---
 
 ## Getting Started
 
@@ -39,54 +53,35 @@ Future enhancements will include QR code generation, ticket downloads, event cus
 
 Clone the repository:
 
-
+```bash
 git clone https://github.com/jblue254/tiketi-yetu.git
-
+```
 
 Navigate to the project directory:
 
-
+```bash
 cd tiketi-yetu
+```
 
+Open `index.html` in your browser.
 
-Install dependencies:
+visit the live site:
 
-
-npm install
-
-## Testing with Jest
-
-Install Jest:
-
-npm install --save-dev jest
-
-Add the following to your `package.json`:
-
-
-{
-  "scripts": {
-    "test": "jest"
-  }
-}
-Run tests:
-
-npm test
-
-Run tests in watch mode:
-
-npm test -- --watch
+**Live Site:** [Tiketi Yetu](https://jblue254.github.io/tiketi-yetu/)
 
 ## Usage
 
-1. Upload your avatar image.
+1. Choose your ticket type
 2. Enter your full name.
 3. Enter your email address.
-4. Enter your GitHub username.
+4. Enter your username.
 5. Click **Generate My Ticket**.
 6. View your personalized event ticket.
+7. Print or download your ticket.
 
 ## Example Output
 
+```text
 Hello, Japheth Kiprono!
 
 Your ticket has been successfully generated.
@@ -96,31 +91,38 @@ Email: japheth@example.com
 Username: @jblue254
 
 Enjoy the event!
+```
+
+---
 
 ## Project Structure
 
+```text
 tiketi-yetu/
 │
 ├── index.html
-├── style.css
-├── script.js
-├── package.json
-├── tests/
-│   ├── validation.test.js
-│   └── ticketGenerator.test.js
+├── tickets.html
+├── checkout.html
+├── contact.html
+│
+├── app.js
+├── index.js
+├── checkout.js
+├── contact.js
+│
 ├── assets/
 │   ├── images/
 │   └── fonts/
+│
 └── README.md
+```
 
-## Live Demo
+---
 
-Live Site: https://jblue254.github.io/tiketi-yetu/
 
 ## Future Enhancements
 
 * QR code generation
-* Ticket download as PDF or image
 * Event theme customization
 * Email ticket delivery
 * Dark mode support
@@ -128,15 +130,35 @@ Live Site: https://jblue254.github.io/tiketi-yetu/
 * Multiple event support
 * Real-time event updates
 
+---
+
 ## Contributing
 
 Contributions, issues, and feature requests are welcome.
 
-1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Push your branch.
-5. Open a Pull Request.
+1. Fork the repository
+2. Create your feature branch
+
+```bash
+git checkout -b feature/amazing-feature
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Add amazing feature"
+```
+
+4. Push to the branch
+
+```bash
+git push origin feature/amazing-feature
+```
+
+5. Open a Pull Request
+
+---
+
 
 ## License
 
@@ -144,9 +166,9 @@ This project is licensed under the MIT License.
 
 ## Author
 
-**Japheth Kiprono**
+## Japheth Kiprono
 
 Software Developer
 
-* GitHub: https://github.com/jblue254
+* GitHub: [jblue254](https://github.com/jblue254)
 * Email: [japhethkiprono2020@gmail.com](mailto:japhethkiprono2020@gmail.com)
