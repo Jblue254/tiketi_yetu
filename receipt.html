@@ -1,12 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipt Page</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body class="bg-gray-100 p-4 sm:p-8">
+    <div class="receipt-container">
+        
+        <div>
+            <table class="receipt-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th class="text-right">Qty</th>
+                        <th class="text-right">Price</th>
+                        <th class="text-right">Total</th>
+                    </tr>
+                </thead>
+                <tbody id="receipt-items">
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="line-dashed"></div>
+
+        <div class="footer-totals">
+            <div class="flex-row">
+                <span>Subtotal</span>
+                <span id="subtotal" class="font-medium">KES 0.00</span>
+            </div>
+            <div class="flex-row">
+                <span>VAT (16%)</span>
+                <span id="vat" class="font-medium">KES 0.00</span>
+            </div>
+            <div class="flex-row grand-total-row">
+                <span>Grand Total</span>
+                <span id="grand-total">KES 0.00</span>
+            </div>
+            
+            <div class="line-dashed"></div>
+            
+            <div class="payment-meta">
+                <p><strong>Payment Method:</strong> M-PESA</p>
+                <p><strong>Transaction ID:</strong> TKY7X92L0P</p>
+            </div>
+
+            <div class="thank-you">
+                <p>Asante kwa kuchagua Tiketi Yetu!</p>
+                <p>Safiri salama.</p>
+            </div>
+        </div>
+
+        <div class="action-area">
+            <button onclick="window.print()" class="btn-print">
+                Print Receipt
+            </button>
+        </div>
+
+    </div>
+  </body>
 </html>
