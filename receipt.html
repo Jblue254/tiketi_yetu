@@ -1,64 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipt Page</title>
+    <title>Receipt - Tiketi Yetu</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body class="bg-gray-100 p-4 sm:p-8">
-    <div class="receipt-container">
-        
-        <div>
-            <table class="receipt-table">
-                <thead>
-                    <tr>
-                        <th>Description</th>
-                        <th class="text-right">Qty</th>
-                        <th class="text-right">Price</th>
-                        <th class="text-right">Total</th>
-                    </tr>
-                </thead>
-                <tbody id="receipt-items">
-                    </tbody>
-            </table>
+    <link rel="stylesheet" href="receipt.css">
+</head>
+<body class="bg-slate-950 text-white flex items-center justify-center p-4 min-h-screen">
+    <div class="w-full max-w-xl mx-auto space-y-8 print:my-0">
+      
+        <header class="text-center space-y-2 print:hidden">
+            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent uppercase tracking-wider">
+                Payment Receipt
+            </h1>
+            <p class="text-slate-400 text-sm">
+                Thank you for your purchase! Your ticket is ready.
+            </p>
+        </header>
+
+        <div class="bg-gradient-to-r from-orange-500 to-amber-400 p-[1px] rounded-3xl shadow-2xl print:border-none print:p-0 print:bg-none print:shadow-none">
+            <div class="bg-slate-950 rounded-[23px] p-6 sm:p-8 space-y-6 print:bg-white print:text-black">
+          
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-slate-900 pb-3 print:border-gray-200">
+                        <h2 class="text-lg font-bold text-slate-200 print:text-black">Order Confirmed</h2>
+                        <span class="text-xs px-2.5 py-1 bg-emerald-500/10 text-emerald-400 font-semibold rounded-full tracking-wide uppercase border border-emerald-500/20 print:bg-emerald-100 print:text-emerald-800 print:border-none">Paid</span>
+                    </div>
+
+                    <div class="flex justify-between items-center py-0.5">
+                        <span class="text-slate-400 text-sm print:text-gray-500">Attendee Name</span>
+                        <span id="receipt-name" class="font-semibold text-slate-200 print:text-black">--</span>
+                    </div>
+
+                    <div class="flex justify-between items-center py-0.5">
+                        <span class="text-slate-400 text-sm print:text-gray-500">Email Address</span>
+                        <span id="receipt-email" class="font-semibold text-slate-200 print:text-black">--</span>
+                    </div>
+
+                    <div class="flex justify-between items-center py-0.5">
+                        <span class="text-slate-400 text-sm print:text-gray-500">Your Handle</span>
+                        <span id="receipt-github" class="text-orange-400 font-medium print:text-orange-600">@-</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3 border-t border-slate-900/60 pt-4 print:border-gray-200">
+                    <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider print:text-gray-400">
+                        Item Summary
+                    </h3>
+                    
+                    <div id="receipt-items-container" class="space-y-2 text-sm">
+                        </div>
+                </div>
+
+                
+
+                <div class="space-y-1.5 text-sm">
+                    <div class="flex justify-between text-slate-400 print:text-gray-500">
+                        <span>Subtotal</span>
+                        <span id="receipt-subtotal">0 KES</span>
+                    </div>
+                    <div class="flex justify-between text-slate-400 print:text-gray-500">
+                        <span>VAT (16%)</span>
+                        <span id="receipt-vat">0 KES</span>
+                    </div>
+                    <div class="bg-slate-900/50 border border-slate-900 rounded-2xl p-4 flex justify-between items-center mt-3 print:bg-gray-100 print:border-gray-200">
+                        <span class="text-sm font-medium text-slate-400 print:text-gray-600">Total Paid</span>
+                        <span id="receipt-total" class="text-2xl font-black text-orange-400 print:text-orange-600">0 KES</span>
+                    </div>
+                </div>
+                
+                <div class="pt-4 border-t border-slate-900/40 text-xs text-slate-500 space-y-1 print:border-gray-200 print:text-gray-600">
+                    <p><strong class="font-semibold text-slate-400 print:text-black">Payment Gateway:</strong> M-PESA</p>
+                    <p><strong class="font-semibold text-slate-400 print:text-black">Transaction ID:</strong> TKY7X92L0P</p>
+                </div>
+
+                <div class="text-center pt-2 italic text-xs text-slate-400 print:text-black">
+                    <p>Thank you for choosing Tiketi Yetu!</p>
+                    <p class="text-slate-500 print:text-gray-600 text-[11px] mt-0.5">Safiri salama na ufurahie tukio lako.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="line-dashed"></div>
-
-        <div class="footer-totals">
-            <div class="flex-row">
-                <span>Subtotal</span>
-                <span id="subtotal" class="font-medium">KES 0.00</span>
-            </div>
-            <div class="flex-row">
-                <span>VAT (16%)</span>
-                <span id="vat" class="font-medium">KES 0.00</span>
-            </div>
-            <div class="flex-row grand-total-row">
-                <span>Grand Total</span>
-                <span id="grand-total">KES 0.00</span>
-            </div>
-            
-            <div class="line-dashed"></div>
-            
-            <div class="payment-meta">
-                <p><strong>Payment Method:</strong> M-PESA</p>
-                <p><strong>Transaction ID:</strong> TKY7X92L0P</p>
-            </div>
-
-            <div class="thank-you">
-                <p>Asante kwa kuchagua Tiketi Yetu!</p>
-                <p>Safiri salama.</p>
-            </div>
-        </div>
-
-        <div class="action-area">
-            <button onclick="window.print()" class="btn-print">
-                Print Receipt
+        <div class="space-y-3 pt-2 print:hidden">
+            <button
+                id="btn-print"
+                onclick="window.print()"
+                type="button"
+                class="w-full py-4 bg-gradient-to-r from-orange-500 to-amber-400 hover:from-orange-600 hover:to-amber-500 font-bold rounded-xl text-center text-white cursor-pointer transition-all active:scale-[0.99] shadow-lg shadow-orange-950/20"
+            >
+                Print Official Receipt
             </button>
+            <a
+                href="index.html"
+                class="block text-center text-xs text-slate-400 hover:text-orange-400 transition-colors py-2 font-medium"
+            >
+                Return to Homepage
+            </a>
         </div>
-
     </div>
-  </body>
+
+    <script src="receipt.js"></script>
+</body>
 </html>
