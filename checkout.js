@@ -1,5 +1,3 @@
-
-// Recover states safely from local storage vectors
 const userData = JSON.parse(localStorage.getItem('checkout_user'));
 const cartData = JSON.parse(localStorage.getItem('checkout_cart')) || {};
 
@@ -8,7 +6,7 @@ if (!userData || Object.keys(cartData).length === 0) {
   window.location.href = 'index.html';
 }
 
-// Populate user data components
+//user data components
 document.querySelector('#summary-name').textContent = userData.name;
 document.querySelector('#summary-email').textContent = userData.email;
 document.querySelector('#summary-github').textContent = `@${userData.JBLUE}`;
@@ -16,7 +14,6 @@ document.querySelector('#summary-github').textContent = `@${userData.JBLUE}`;
 const cartContainer = document.querySelector('#order-breakdown-container');
 const totalPriceDisplay = document.querySelector('#summary-price');
 
-//Render out item groups dynamically based on selections made
 
 function renderCartItems() {
   if (!cartContainer) return;

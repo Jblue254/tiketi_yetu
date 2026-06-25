@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     eventsList.forEach(item => {
-      // Figure out which banner group matches this ticket item
+      
       let matchedGroup = "Event Pass";
       if (item.location.includes("Kitenge Fest")) matchedGroup = "Kitenge Fest";
       else if (item.location.includes("Colour Festival")) matchedGroup = "Colour Festival";
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const eventImage = imageAssets[matchedGroup] || "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=500&q=80";
       const displayDate = dateMap[matchedGroup] || "Soon";
 
-      // CLEANED: Replaced the dynamic fire badge with your original static date badge style
+      
       const statusBadge = `<span class="absolute top-3 left-3 bg-red-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded shadow-md uppercase tracking-wider">${displayDate}</span>`;
 
       // We turn the card container into an anchor tag <a> pointing to your ticket checkout page
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    // Active Searching Layout intercept engine
+    
     if (searchForm && searchInput && venueInput) {
         searchForm.addEventListener("submit", (e) => {
             e.preventDefault();

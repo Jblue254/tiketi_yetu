@@ -1,7 +1,7 @@
 let ticketTiersAPI = []; 
 let shoppingCart = {};
 
-// Primary DOM Elements Selectors
+// Elements Selectors
 const ticketListContainer = document.querySelector('#ticket-api-list');
 const formFiller = document.querySelector('#form_filler');
 const instructionText = document.querySelector('#form-instruction');
@@ -53,7 +53,7 @@ async function loadTicketsFromAPI() {
   }
 }
 
-// Generate and Render Ticket Cards dynamically
+
 function renderTickets(ticketsToRender = ticketTiersAPI) {
   if (!ticketListContainer) return;
 
